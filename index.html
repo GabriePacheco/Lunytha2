@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no"/>
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="css/materialize.css">
+	<link rel="stylesheet" type="text/css" href="css/lunytha.css">
+
+	
+
+	<title>Lunytha</title>
+</head>
+<body>
+	<!-- APP -->
+	<div id="app">
+		<div id="cargar" class="pageApp valign-wrapper" >
+			<div class="container center-align">
+				<div class="col s12">
+
+					  <div class="preloader-wrapper big active">
+					    <div class="spinner-layer spinner-blue-only">
+					      <div class="circle-clipper left">
+					        <div class="circle"></div>
+					      </div><div class="gap-patch">
+					        <div class="circle"></div>
+					      </div><div class="circle-clipper right">
+					        <div class="circle"></div>
+					      </div>
+					    </div>
+					  </div>
+					
+				</div>
+				
+			</div>
+		</div>
+		<!--pagina Login -->
+			<div id="login" class="pageApp valign-wrapper ">
+				<div class="container center-align">
+					<div class="row">
+						<div class="col s12">
+							<h2>Lunytha</h2>
+							<p>Inicia sesión</p>
+							<form id = "loginFormulario" class="col s12">
+								<div class="row">
+							        <div class="input-field col s12">
+							          <input placeholder="email ej. algie@ejemplo.com" id="loginEmail" type="email" class="validate">
+							          <label for="loginEmail">Correo Electrónico</label>
+							        </div>
+
+							        <div class="input-field col s12">
+							          <input  id="loginPassword" type="password" class="validate">
+							          <label for="loginPassword">Correo Contraseña</label>
+							        </div>		
+
+							      	<div class="input-field col s12">
+							          <button  id="loginBoton" class="btn waves-effect waves-light col s12" type="submit" name="action" disabled >Ingresar
+									    <i class="material-icons right">send</i>
+									  </button>
+							        </div>
+
+							        <div class="input-field col s12">
+							        	<p>¿Olvidaste tus datos de acceso? <a href="#recuperar" ><b>Obtener ayuda</b></a></p>					
+							        </div>	
+							        <div class="input-field col s12">
+							        	<div class="col s5"><hr/></div>		
+							        	<div class="col s2">O</div>
+							        	<div class="col s5"><hr/></div>		
+							        </div>		
+
+							        <div class="input-field col s12">
+								         <a class="loginFacebook btn waves-effect waves-light col s12 blue darken-4" type="submit" name="action">Ingresa con facebook
+										    <i class="material-icons left"></i>
+										  </a>				
+							        </div>
+							        <div class="input-field col s12">
+							        	<p>¿No tienes cuenta ? <a href="#registro" ><b>Registrate aquí.</b></a></p>					
+							        </div>							
+									
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div><!--fin Login-->
+
+		<!-- paginae Recuperar --> 
+			<div id = "recuperar" class="pageApp valign-wapper ">
+				<div class="container center-align">
+					<div class="row">
+						<div class="col s12">
+							<h2>Lunytha</h2>
+							<p>Ingresa tu dirección de correo electrónico vinculada a tu cuenta te enviaremos un e-mail con instruciones para que recuperar tu contraseña.</p>
+							<form id = "recuperarFormulario">
+								<div class="row"> 
+							     	<div class="input-field col s12">
+							          <input placeholder="email ej. algie@ejemplo.com" id="recuperarEmail" type="email" class="validate">
+							          <label for="recuperarEmail">Correo Electrónico</label>
+							        </div>
+
+							        <div class="input-field col s12">
+							          <button  id="recuperarBoton" class="btn waves-effect waves-light col s12" type="submit" name="action" disabled >Enviar
+									    <i class="material-icons right">send</i>
+									  </button>
+							        </div>
+
+							        <div class="input-field col s12">
+							        	<p>¿Ya tienes tus datos? <a href="#login" ><b> Inicia sesión </b></a></p>		
+							        </div>
+
+							        <div class="input-field col s12">
+							        	<div class="col s5"><hr/></div>		
+							        	<div class="col s2">O</div>
+							        	<div class="col s5"><hr/></div>		
+							        </div>		
+
+							        <div class="input-field col s12">
+								         <a class="loginFacebook btn waves-effect waves-light col s12 blue darken-4" type="submit" name="action">Ingresa con facebook
+										    <i class="material-icons left"></i>
+										  </a>				
+							        </div>							        	
+
+						        </div>
+								
+							</form>	
+						</div>
+					</div>
+				</div>
+			</div><!-- fin Recuperar-->
+
+		<!--pagina Registro -->
+			<div id="registro" class="pageApp valign-wrapper ">
+				<div class="container center-align">
+					<div class="row">
+						<div class="col s12">
+							<h2>Lunytha</h2>
+							<p>Registrate</p>
+							<form id = "registroFormulario" class="col s12">
+								<div class="row">
+							        <div class="input-field col s12">
+							          <input placeholder="email ej. algie@ejemplo.com" id="registroEmail" type="email" class="validate">
+							          <label for="registroEmail">Correo Electrónico</label>
+							        </div>
+
+							        <div class="input-field col s12">
+							          <input  id="registroPassword" type="password" class="validate">
+							          <label for="registroPassword">Contraseña</label>
+							        </div>		
+							        
+							        <div class="input-field col s12">
+							          <input  id="registroPasswordConfir" type="password" class="validate">
+							          <label for="registroPasswordConfir">Repite la contraseña</label>
+							        </div>								        
+
+							      	<div class="input-field col s12">
+							          <button  id="registroBoton" class="btn waves-effect waves-light col s12" type="submit" name="action" disabled >Siguentes
+									    <i class="material-icons right">send</i>
+									  </button>
+							        </div>
+
+							        <div class="input-field col s12">
+							        	<div class="col s5"><hr/></div>		
+							        	<div class="col s2">O</div>
+							        	<div class="col s5"><hr/></div>		
+							        </div>		
+
+							        <div class="input-field col s12">
+								         <a class="loginFacebook btn waves-effect waves-light col s12 blue darken-4" type="submit" name="action">Ingresa con facebook
+										    <i class="material-icons left"></i>
+										  </a>				
+							        </div>
+							        <div class="input-field col s12">
+							        	<p>¿Ya tienes cuenta? <a href="#login" ><b>Inicia sesión.</b></a></p>					
+							        </div>							
+									
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div><!--fin Registro-->
+
+		<!-- paginae Mensaje mail de Confirmación --> 
+			<div id = "confirmar" class="pageApp valign-wrapper ">
+				<div class="container center-align">
+					<div class="row">
+						<div class="col s12">
+							<h2>Lunytha	</h2>
+							<p>Enviamos un correo electrónico <b id ="confirmarId"> </b>para confirmar tu identidad, revisalo y has click en el click para activar tu tuenta.</p>
+							<form id = "confirmarFormulario">
+								<div class="row">
+
+							        <div class="input-field col s12">
+							        	<p>¿No reciví el email? <a id = "reemviarConfirmacion" ><b>Enviar otro</b></a></p>		
+							        </div>
+
+							        <div class="input-field col s12">
+							        	<p>¿Este no es mi correo electronico? <a class="cerrarSecion" ><b> Salir </b></a></p>		
+							        </div>
+
+							        <div class="input-field col s12">
+							        	<div class="col s5"><hr/></div>		
+							        	<div class="col s2">O</div>
+							        	<div class="col s5"><hr/></div>		
+							        </div>		
+
+							        <div class="input-field col s12">
+								         <a class="loginFacebook btn waves-effect waves-light col s12 blue darken-4" type="submit" name="action">Ingresa con facebook
+										    <i class="material-icons left"></i>
+										  </a>				
+							        </div>							        	
+
+						        </div>
+								
+							</form>	
+						</div>
+					</div>
+				</div>
+			</div><!-- Mensaje mail de Confirmación-->	
+
+		<!--pagina Cambiar Clave -->
+			<div id="cambiarClave" class="pageApp valign-wrapper ">
+				<div class="container center-align">
+					<div class="row">
+						<div class="col s12">
+							<h2>Lunytha</h2>
+							<p>Cambia tu contraseña para acceder a la aplicacion.</p>
+							<form id = "cambiarClaveFormulario" class="col s12">
+								<div class="row">
+							        <div class="input-field col s12">
+							          <input  id="cambiarClavePassword" type="password" class="validate">
+							          <label for="cambiarCLavePassword">Nueva Contraseña</label>
+							        </div>	
+
+							        <div class="input-field col s12">
+							          <input  id="cambiarClavePassword2" type="password" class="validate">
+							          <label for="cambiarCLavePassword2">Confirma Nueva Contraseña</label>
+							        </div>		
+
+							      	<div class="input-field col s12">
+							          <button  id="cambiarClaveBoton" class="btn waves-effect waves-light col s12" type="submit" name="action" disabled >Guardar
+									    <i class="material-icons right">send</i>
+									  </button>
+							        </div>
+
+	
+
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div><!--fin Cambiar Clave -->
+
+		<!-- pagina Registro de Imagen -->
+			<div id ="registroImagen" class="pageApp valing-wrapper ">
+				<div class="container center-align">
+					<div class="row">
+						<div class="col s12">
+							<h5>Sleciona una imagen para tu perfil </h5>
+							<div id ="fotoImagen"></div>
+							<div id ="botoneraImagen"></div>
+							<p>Está cuenta no es mía? <a class="cerrarSesion" ><b>Salir</b></a></p>
+						</div>
+					</div>
+				</div>
+			</div><!-- fin Registro de imagen-->
+
+		<!-- pagina Registro Nombre , rol  -->
+			<div id = "registroNombre" class="pageApp valing-wrapper ">
+				<div class="container center-align">
+					<div class="row">
+						<div class="col s12"> 
+							<h5>Datos de la aplicación</h5>
+							<form id="registroNombreFormulario">
+								<div class="row">
+
+							        <div class="input-field col s12">
+							          <i class="material-icons prefix">account_circle</i>
+							          <input id="nombre" type="text" class="validate" placeholder="Ingresa tu nombre y apellido">
+							          <label for="nombre">Nombre y apellido</label>
+							        </div>
+
+							        <div class="input-field col s12">
+							        	<i class="material-icons prefix left">perm_contact_calendar</i>
+							        	    <select id = "rol">
+										      <option value="" disabled selected>selecciona una opción</option>
+										      <option value="1">Soy estudiante</option>
+										      <option value="2">Soy Profesor</option>
+										      <option value="3">Soy Padre de Famila </option>
+										    </select>
+										    <label>Rol del usuario </label>
+							        </div>
+
+
+							        <div class="input-field col s12">
+							          <i class="material-icons prefix">lock</i>
+							          <input id="ClaveSecreta" type="text" class="validate" placeholder="****">
+							          <label for="nombre">ClaveSecreta</label>
+							        </div>
+
+							        <div class="input-field col s12">
+						          		<button  id="registroNombreBoton" class="btn waves-effect waves-light col s12" type="submit" name="action" disabled >Guardar
+										    <i class="material-icons right">send</i>
+										 </button>
+							        </div>
+									
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				
+			</div><!--fin registro nombre  -->
+
+		<!--pagina Perfil -->
+			<div id ="home" class="pageApp ">
+				 <nav id ="homeBarra">
+				    <div class="nav-wrapper">
+				      <a id ="homeLink" href="#home" class=" left"><h5 id="homeTitle">&nbsp;Lunytha</h5></a>			 
+				      <a href="#perfil" class="right"><i class="material-icons">person</i> </a>
+				    </div>
+				  </nav>
+				  <div id ="homeContenido">
+				  
+				  	<div id="homeHistorias">
+				  	</div>
+
+				  	<div id ="homePulicaciones">
+				  		<div id="publicacionId"  class="row"> 
+
+						      <div class="card">
+						      	<div class="row valign-wrapper"> 
+								    <div class="col s2">
+								    	<img id ="pulicacionUserImage" src="https://materializecss.com/images/yuna.jpg" class="circle responsive-img">
+								    </div>
+						  			<div class="col s8">
+						  				<b id ="publicacionUserName">Nombre de Usuario</b><br>
+						  				<small id ="publicacionHora">Lunes 10:10 am</small>
+						  			</div>
+						  			<div class="col s2 right-align ">
+						  				<a class='dropdown-trigger' href='#' data-target='dropdown1'>
+						  					<i class="material-icons right">more_vert</i>
+						  				</a>
+						  				<ul id='dropdown1' class='dropdown-content'>
+										    <li><a href="#!">one</a></li>
+										    <li><a href="#!">two</a></li>
+										    <li class="divider" tabindex="-1"></li>
+										    <li><a href="#!">three</a></li>
+										    <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+										    <li><a href="#!"><i class="material-icons">cloud</i>five</a></li>
+										  </ul>
+						  				
+						  			</div>					      	
+					  			</div>
+						        <div class="card-image">
+						          <img src="https://materializecss.com/images/sample-1.jpg">					         
+						        </div>
+						        <div class="card-content">
+						          <p>I am a very simple card. I am good at containing small bits of information.
+						          I am convenient because I require little markup to use effectively.</p>
+						        </div>
+						        <div class="card-action">
+						          <a href="#">This is a link</a>
+						        </div>
+						      </div>
+						</div>      
+						 
+				  	</div>
+
+
+				  	
+				  </div>
+
+				
+			</div><!--fin PErfil-->
+
+
+	</div><!-- fin APP-->
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	
+	
+</body>
+</html>

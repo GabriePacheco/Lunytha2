@@ -6,8 +6,13 @@
 	var elems = document.querySelectorAll('select');
     var instances = M.FormSelect.init(elems);
 
-      var elems = document.querySelectorAll('.dropdown-trigger');
+    var elems = document.querySelectorAll('.dropdown-trigger');
     var instances = M.Dropdown.init(elems);
 
+    
+
+
+
 }
+ 
 document.addEventListener('DOMContentLoaded',lunytha)

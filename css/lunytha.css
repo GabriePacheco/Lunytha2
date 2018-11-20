@@ -23,3 +23,43 @@
 
 	margin: 0.5em;
 }
+#homePulicaciones{
+	overflow: scroll;
+}
+
+/*.barraSuperior{
+	position: absolute;
+	top: 0;
+	overflow: hidden;
+}*/
+
+.barraPie{
+	overflow: hidden;
+}
+
+.mensajeRecivido{
+	text-align: left;
+
+
+}
+.mensajeRecivido div{
+  background: #e2e2e2; 
+  padding: 0.2em;
+  margin: auto;
+  width: max-content  !important;
+  margin-left: 0.2em !important;
+  max-width: 60% !important;
+  overflow: hidden;
+}
+.mensajeRecivido div span{
+	display: left;
+
+}
+.mensajeEnviado {
+	text-align: right;
+}
+.mensajeEnviado div{
+	max-width: 70%;
+	padding: 1em;
+	background: #999999;
+}

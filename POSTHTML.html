@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="css/materialize.css">
+	<link rel="stylesheet" type="text/css" href="css/lunytha.css">
+	<link rel="stylesheet" type="text/css" href="css/recortadorStyle.css">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no"/>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+		<div class="container">
+			<div class="row">
+				<div id = "postId" class="col s12">
+					<div class="card">
+						<div class="postUser">
+							<div class="row">
+								<div class="col s2">
+									<img src="https://materializecss.com/images/yuna.jpg" class="responsive-img circle">									
+								</div>
+								<div class="col s8">
+									<b id="postIdUserName">Nombre Usuario</b><br>
+									<span id ="postIdFecha">ayer a las 20:00</span>
+
+								</div>
+								<div class="col s2">
+									<a  class='dropdown-trigger' data-target='postIdMenu'><i class="material-icons right">more_vert</i></a>	
+									<ul id='postIdMenu' class='dropdown-content'>
+
+									    <li><a href="#!"><i class="material-icons">delete</i>Borrar</a></li>
+									    <li><a href="#!"><i class="material-icons">edit</i>Editar</a></li>
+									 </ul>			
+								</div>
+							</div>
+						</div>
+				        <div class="publicacionTexto">
+				          I am a very simple card. I am good at containing small bits of information.
+				          I am convenient because I require little markup to use effectively.
+				        </div>						
+				        <div class="card-image">
+				          <img src="https://materializecss.com/images/sample-1.jpg">			    
+				        </div>
+
+				        <div class="row postAcciones">
+				          <div class="col s6">
+				          	<a id="postIdLike"><i class="material-icons left">favorite_border</i></a>
+				          </div>
+				          <div class="col s6">
+				          	<a id="postIdComment"><i class="material-icons right">mode_comment</i></a>
+				          </div>
+				          <div id ="postIdeComentarios" class="col s12 comentario">
+				          	<div class="row" id ="podIdComentariosLista">
+				          		<div id = "comenterioId" class="col 12">
+				          			<div class="row">
+				          				<div class="col s2">
+				          					<img src="https://materializecss.com/images/yuna.jpg" class="responsive-img circle perfilImage">
+				          				</div>
+				          				<div class="col s10">
+				          					<b id = "comentarioUseName">Nombre de Usuario</b><span id="comentarioTexto"> Yo comento lo que quiero</span>
+				          					<small id="comentarioFecha" class="valign-wrapper">20 jul. 10:25 <span><a>Borrar</a></span> <span><a>Editar</a></span></small>
+
+
+				          				</div>
+				          			</div>
+				          			
+				          		</div>
+				          	</div>
+				          	<div class="row addComentario ">
+				          		<div class="col s2 valign-wrapper">
+				          			<img src="https://materializecss.com/images/yuna.jpg" class="responsive-img circle">
+				          		</div>
+				          		<form id = "addComantero" data-post="postId" >
+					          		<div class="col s8 valign-wrapper">
+						          	
+						          	 	   <textarea id="textarea1" class="materialize-textarea" placeholder="Agrega un comentario..."></textarea>	 
+						          		 
+					          		</div>
+					          		<div class="col s2 valign-wrapper">									  
+										    <i class="material-icons center"><a>send</a></i>							  
+					          		</div> 	
+				          		</form>
+				          		
+				          		
+				          	</div>
+				          </div>
+				        </div>
+				      </div>
+				</div>
+			</div>
+		</div>
+	
+
+
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript">
+		var elems = document.querySelectorAll('select'); //LISTAS 
+		var instances = M.FormSelect.init(elems);
+		var elems = document.querySelectorAll('.dropdown-trigger'); // BOTONES DESPLEGABLES
+    	var instances = M.Dropdown.init(elems);
+		
+	</script>
+	
+</body>
+</html>

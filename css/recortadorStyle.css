@@ -1,0 +1,23 @@
+#recortador{
+	overflow: hidden;
+}
+.recortable {
+	animation-duration: 0.7s;
+	animation-name: recortable;
+	animation-iteration-count: infinite;
+}
+@keyframes recortable {
+	from {
+		border: #9e9e9e 3px dashed;
+	}
+	to{
+		border: #212121 3px dotted;
+
+	}
+
+
+
+}
+.redondo {
+	border-radius: 60%;
+}

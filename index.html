@@ -8,7 +8,8 @@
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="css/materialize.css">
 	<link rel="stylesheet" type="text/css" href="css/lunytha.css">
-
+	<link rel="stylesheet" type="text/css" href="css/recortadorStyle.css">
+	
 	
 
 	<title>Lunytha</title>
@@ -188,7 +189,7 @@
 					<div class="row">
 						<div class="col s12">
 							<h2>Lunytha	</h2>
-							<p>Enviamos un correo electrónico <b id ="confirmarId"> </b>para confirmar tu identidad, revisalo y has click en el click para activar tu tuenta.</p>
+							<p>Enviamos un correo electrónico <b id ="confirmarId"> </b>para confirmar tu identidad, revisalo y has click en el link para activar tu tuenta.</p>
 							<form id = "confirmarFormulario">
 								<div class="row">
 
@@ -260,8 +261,8 @@
 					<div class="row">
 						<div class="col s12">
 							<h5>Sleciona una imagen para tu perfil </h5>
-							<div id ="fotoImagen"></div>
-							<div id ="botoneraImagen"></div>
+							<div id ="recortador"></div>
+							<div id ="botoneraRecortador"></div>
 							<p>Está cuenta no es mía? <a class="cerrarSesion" ><b>Salir</b></a></p>
 						</div>
 					</div>
@@ -278,35 +279,35 @@
 								<div class="row">
 
 							        <div class="input-field col s12">
-							          <i class="material-icons prefix">account_circle</i>
-							          <input id="nombre" type="text" class="validate" placeholder="Ingresa tu nombre y apellido">
+							          <i class="material-icons prefix">fingerprint</i>
+							          <input id="nombre" type="text" class="validate" placeholder="Ingresa tu nombre y apellido" required>
 							          <label for="nombre">Nombre y apellido</label>
 							        </div>
 
 							        <div class="input-field col s12">
-							        	<i class="material-icons prefix left">perm_contact_calendar</i>
-							        	    <select id = "rol">
+							        		<i class="material-icons prefix">assignment_ind</i>
+							        	    <select id = "rol" required>
 										      <option value="" disabled selected>selecciona una opción</option>
 										      <option value="1">Soy estudiante</option>
 										      
 										      <option value="2">Soy Padre de Famila </option>
 										      <option value="3">Soy Profesor</option>
 										    </select>
-										    <label>Rol del usuario </label>
+										    <label for ="rol">Rol del usuario </label>
 							        </div>
 
 
 
-							        <div class="input-field col s12">
+							        <div id="contenedorClaveSecreta" class="input-field col s12 hide">
 							          <i class="material-icons prefix">lock</i>
-							          <input id="ClaveSecreta" type="text" class="validate" placeholder="****">
-							          <label for="nombre">ClaveSecreta</label>
+							          <input id="ClaveSecreta" type="text" class="validate " placeholder="****">
+							          <label for="ClaveSecreta">Pin Profesional</label>
 							        </div>
 
-							        <div class="input-field col s12">
+							        <div id="contenedorCurso" class="input-field col s12 hide">
 							          <i class="material-icons prefix">school</i>
-							          <input id="curso" type="text" class="validate">
-							          <label for="nombre">Curso</label>
+							          <input id="curso" type="text" class="validate" placeholder="Curso (opcional)">
+							          <label for="curso">Curso</label>
 							        </div>
 
 							        <div class="input-field col s12">
@@ -322,6 +323,7 @@
 				</div>			
 			</div><!--fin registro nombre  -->
 
+
 		<!--pagina Home -->
 			<div id ="home" class="pageApp hide">
 				 <nav id ="homeBarra" class="barraSuperior">	    
@@ -331,104 +333,110 @@
 					    	<div class="col s4 right-align"><a href="#buscarContactos"><i class="material-icons right">add_comment</i></a></div>
 				    	</div>
 				  </nav>
-				  	  <div id ="homeContenido">
-	  
-							  	<div id ="homePulicaciones">
-							  		<div id="publicacionId"  class="row"> 
+				  <div id ="homeContenido" class="contenidoPagina">
+				  	<div id = "posts" >
+				  		<div id = "postId" class="col s12">
+							<div class="card">
+								<div class="postUser">
+									<div class="row">
+										<div class="col s2">
+											<img src="https://materializecss.com/images/yuna.jpg" class="responsive-img circle">									
+										</div>
+										<div class="col s8">
+											<b id="postIdUserName">Nombre Usuario</b><br>
+											<span id ="postIdFecha">ayer a las 20:00</span>
 
-									      <div class="card">
-										      	<div class="row valign-wrapper"> 
-												    <div class="col s2">
-												    	<img id ="pulicacionUserImage" src="https://materializecss.com/images/yuna.jpg" class="circle responsive-img" />
-												    </div>
+										</div>
+										<div class="col s2">
+											<a  class='dropdown-trigger' data-target='postIdMenu'><i class="material-icons right">more_vert</i></a>	
+											<ul id='postIdMenu' class='dropdown-content'>
 
-										  			<div class="col s8">
-										  				<b id ="publicacionUserName">Nombre de Usuario</b><br />
-										  				<small id ="publicacionHora">Lunes 10:10 am</small>
-										  			</div>
+											    <li><a href="#!"><i class="material-icons">delete</i>Borrar</a></li>
+											    <li><a href="#!"><i class="material-icons">edit</i>Editar</a></li>
+											 </ul>			
+										</div>
+									</div>
+								</div>
+						        <div class="publicacionTexto">
+						          I am a very simple card. I am good at containing small bits of information.
+						          I am convenient because I require little markup to use effectively.
+						        </div>						
+						        <div class="card-image">
+						          <img src="https://materializecss.com/images/sample-1.jpg">			    
+						        </div>
 
-										  			<div class="col s2 right-align ">
-										  				<a class='dropdown-trigger' href='#' data-target='publicacionMenu'>
-										  					<i class="material-icons right">more_vert</i>
-										  				</a>
-										  				<ul id='publicacionMenu' class='dropdown-content'>
-														    <li><a href="#!">one</a></li>
-														    <li><a href="#!">two</a></li>
-														    
-														  </ul>
-										  				
-										  			</div>	
+						        <div class="row postAcciones">
+						          <div class="col s6">
+						          	<a id="postIdLike"><i class="material-icons left">favorite_border</i></a>
+						          </div>
+						          <div class="col s6">
+						          	<a id="postIdComment"><i class="material-icons right">mode_comment</i></a>
+						          </div>
+						          <div id ="postIdeComentarios" class="col s12 comentario">
+						          	<div class="row" id ="podIdComentariosLista">
+						          		<div id = "comenterioId" class="col 12">
+						          			<div class="row">
+						          				<div class="col s2">
+						          					<img src="https://materializecss.com/images/yuna.jpg" class="responsive-img circle">
+						          				</div>
+						          				<div class="col s10">
+						          					<b id = "comentarioUseName">Nombre de Usuario</b><span id="comentarioTexto"> Yo comento lo que quiero</span>
+						          					<small id="comentarioFecha" class="valign-wrapper">20 jul. 10:25 <span><a>Borrar</a></span> <span><a>Editar</a></span></small>
 
-									  			</div>
-										        <div id = "publicacionTexto" class="publicacionTexto">
-										          I am a very simple card. I am good at containing small bits of information.
-										         
-										        </div>
-										        <div id = "publicacionImagenes" class="card-image">
-										          <img  id ="publicacionImagne1" src="https://materializecss.com/images/sample-1.jpg" />					         
-										        </div>
-										        <div class="row">
-													<div class="col s6"><a><i class="material-icons ">favorite_border</i></a></div>
-													<div class="col s6"><a><i class="material-icons right">comment</i></a></div>
 
-												</div>
-												<div id ="publicacionContenedorComentarios"> 
-													<div id ="publicacioncomentarios"> 
-														<div id ="comentario">
-															<div class="row">
-																<div class="col s2">
-																	<img id ="comentarioUserImagen" src="https://materializecss.com/images/yuna.jpg" class="circle responsive-img" />
-																</div>
-																<div class="col s10">
-																	<b id ="comentarioUserNombre">Nombre Usuario</b> <span id ="comentarioTexto">Yo comento lo que quiero</span>
-																	<small id ="comentarioHora">ayer 20:15 </small>
-
-																</div>
-															</div>
-														</div>
-													</div>	
-													<div id ="publicacionAddComentario" class="addComentario ">
-														<div class="row valign-wrapper">
-															<div class="col s2">
-																<img id ="pulicacionUserImage" src="https://materializecss.com/images/yuna.jpg" class="circle responsive-img" />
-															</div>
-															<div class="col s8">
-																<textarea placeholder="Escribe ún comentario" id="publicacionTextoComentario" class="materialize-textarea"></textarea>
-															</div>
-															<div class="col s2"><a id ="publicacionEnviarComentario"><i class="material-icons right">send</i></a></div>
-
-														</div>
-													</div>	
-												</div><!----- -->
-									      </div>
-									</div>      
-									 
-							  	</div>		  	
-					</div>
+						          				</div>
+						          			</div>
+						          			
+						          		</div>
+						          	</div>
+						          	<div class="row addComentario ">
+						          		<div class="col s2 valign-wrapper">
+						          			<img src="https://materializecss.com/images/yuna.jpg" class="responsive-img circle">
+						          		</div>
+						          		<form id = "addComantero" data-post="postId" >
+							          		<div class="col s8 valign-wrapper">
+								          	
+								          	 	   <textarea id="textarea1" class="materialize-textarea" placeholder="Agrega un comentario..."></textarea>	 
+								          		 
+							          		</div>
+							          		<div class="col s2 valign-wrapper">									  
+												    <i class="material-icons center"><a>send</a></i>							  
+							          		</div> 	
+						          		</form>
+						          		
+						          		
+						          	</div>
+						          </div>
+						        </div>
+						      </div>
+						</div>
+						
+				  	</div>
+				  </div>
+				    	 	  
 
 				  <nav class="barraPie center-align">
 				  	<div class="row">
 				  		<div class="col s2"><a href="#home"><i class="material-icons">home</i></a></div>
-				  		<div class="col s2"><a href="#buscarContactos"><i class="material-icons">search</i></a></div>
+				  		<div class="col s2"><a href="#buscar"><i class="material-icons">search</i></a></div>
 				  		<div class="col s4"><a href="#addPost"><i class="material-icons">add</i></a></div>
-						<div class="col s2"><a href="#addPost"><i class="material-icons">favorite_border</i></a></div>
-						<div class="col s2"><a href="#addPost"><i class="material-icons">person</i></a></div>
+						<div class="col s2"><a href="#likes"><i class="material-icons">favorite_border</i></a></div>
+						<div class="col s2"><a href="#perfil"><i class="material-icons">person</i></a></div>
 				  	</div>
 				  </nav>
 			</div><!--fin home-->
+
 		<!-- pagina Perfil-->
-			<div id = "perfil" class="pageApp hide">
+			<div id = "perfil" class="pageApp hide ">
 					 <nav id ="perfilBarra" class="barraSuperior">	    
 				    	<div class="row"> 
 					    	<div class="col s2">
-					    		<a href="#home">
+					    		<a href="#home" >
 					    			<i class="material-icons">arrow_back</i>
 					    		</a>
 					    	</div>
 					    	<div class="col s6">
-					    		<a >
 					    			<strong>Editar perfil</strong>
-					    		</a>
 					    	</div>
 					    	<div class="col s4 right-align">
 					    		<a id ="savePerfil">
@@ -437,7 +445,7 @@
 					    	</div>
 				    	</div>
 				  	</nav>
-				  	<div id="perfilContenido" class="container">
+				  	<div id="perfilContenido" class="container contenidoPagina">
 					  	<div class="col s12 ">
 					  		<form id = "perfilFormulario">
 					  			<div class="row">
@@ -449,33 +457,36 @@
 					  					
 					  				</div>
 			  				        <div class="input-field col s12">
+			  				        	<i class="material-icons prefix">fingerprint</i>
 							          <input placeholder="Nombre" id="nombrePerfil" type="text" class="validate">
 							          <label for="nombrePerfil">Nombre</label>
 							        </div>
 
 							        <div class="input-field col s12">
-							        	
-							        	    <select id = "rolPerfil">
-										   
+							        	<i class="material-icons prefix">assignment_ind</i>
+							        	    <select id = "rolPerfil">								   
 										      <option value="1">Soy estudiante</option>
 										      <option value="2">Soy Padre de Famila </option>
 										    </select>
-										    <label>Rol del usuario </label>
+										    <label for ="rolPerfil">Rol del usuario </label>
 							        </div>
 
 							        <div class="input-field col s12">
 							          <i class="material-icons prefix">school</i>
 							          <input id="cursoPerfil" type="text" class="validate">
-							          <label for="nombre">Curso</label>
+							          <label for="cursoPerfil">Curso</label>
 							        </div>
 				
 
 							        <div class="input-field col s12">
+							          <i class="material-icons prefix">local_library</i>
 							          <input placeholder="Biografía" id="biografiaPerfil" type="text" class="validate">
 							          <label for="biografiaPerfil">Biografía</label>
 							        </div>
 									<div class="input-field col s12">
+									  <i class="material-icons prefix">smartphone</i>	
 							          <input placeholder="Teléfono" id="telefonoPerfil" type="text" class="validate">
+
 							          <label for="telefonoPerfil">Teléfono</label>
 							        </div>
 
@@ -483,7 +494,8 @@
 							          <h6>Informacíon Privada</h6>
 							        </div>
 									<div class="input-field col s12">
-							          <input placeholder="Email" id="emailPerfil" type="text" class="validate">
+										 <i class="material-icons prefix">email</i>
+							          <input placeholder="Email" id="emailPerfil" type="text" class="validate" disabled>
 							          <label for="emailPerfil">Correo electrónico</label>
 							        </div>
 
@@ -504,6 +516,7 @@
 					  	</div>
 				  	</div>			
 			</div><!-- fin Perfil -->
+	
 		<!-- Pagina Buscar -->
 			<div id = "buscar" class="pageApp hide">
 				<nav id ="buscarBarra" class="barraSuperior">	    
@@ -522,7 +535,7 @@
 				        </div>
 			    	</div>
 			  	</nav>
-			  	<div id="buscarResultado">
+			  	<div id="buscarResultado" class= "contenidoPagina">
 			  		  <ul class="collection">
 						    <li class="collection-item avatar">
 						      <img id ="buscarResultadoImagen" src="https://materializecss.com/images/yuna.jpg" alt="" class="circle">
@@ -535,7 +548,7 @@
 				
 			</div><!--fin Buscar -->
 		<!-- pagina Likes-->
-			<div id ="Likes" class="pageApp hide">
+			<div id ="likes" class="pageApp hide">
 				<nav id ="likesBarra" class="barraSuperior">	    
 			    	<div class="row"> 
 				    	<div class="col s2">
@@ -548,10 +561,10 @@
 				        </div>
 			    	</div>
 			  	</nav>
-			  	<div id="likesContenido">
+			  	<div id="likesContenido" class="contenidoPagina">
 				  		<ul class="collection">
 						    <li class="collection-item avatar">
-						      <img id ="likes" src="https://materializecss.com/images/yuna.jpg" alt="" class="circle">
+						      <img id ="likesUserImg" src="https://materializecss.com/images/yuna.jpg" alt="" class="circle">
 						      
 						      <p id = "likeCont">First Line</p>
 						     
@@ -575,7 +588,7 @@
 				        </div>
 			    	</div>
 			  	</nav>
-			  	<div id ="conversacionesContenido">
+			  	<div id ="conversacionesContenido" class="contenidoPagina">
 			  			<ul id = "conversacionesLista" class="collection">
 						    <li class="collection-item avatar">
 						      <img id ="conversacionesUserImagen" src="https://materializecss.com/images/yuna.jpg" alt="" class="circle">
@@ -596,6 +609,7 @@
 	<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
 	<script type="text/javascript" src="js/firebaseConfig.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/recortador.js"></script>
 
 </body>
 </html>

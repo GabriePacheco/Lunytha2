@@ -113,3 +113,34 @@
 	bottom: 0;
 	width:100%;
 }
+
+.colorPosts {
+	border: solid 0.1em gray;
+	height: 2em !important;
+
+}
+
+.colorPosts.none{
+	text-align: center;
+}
+.colorPosts.azul {
+	background: #1e88e5 !important;
+	text-align: center;
+	color:#ffffff;
+}
+
+.colorPosts.verde {
+	background: #81c784 !important;
+	text-align: center;
+	color:#ffffff;
+}
+.colorPosts.naranja {
+	background: #f57c00 !important;
+	text-align: center;
+	color:#ffffff;
+}
+.colorPosts.rojo {
+	background: #b71c1c !important;
+	text-align: center;
+	color:#ffffff;
+}
